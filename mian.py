@@ -254,8 +254,7 @@ def vignere_decode(message, key):
 
 
 def vignere_brute(message):
-    file = open('testdata.txt', 'a')
-    l = []
+    file = open('testdata.txt', 'w')
     x = []
     word_list = words.words()
     for i in range(0, len(word_list)):
