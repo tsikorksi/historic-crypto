@@ -118,14 +118,14 @@ def decode(message):
     f = ["4", "5", "6", "7", "8", "9"]
     v = [a, b, c, d, e, f]
     code = []
-    chck = True
-    while chck:
+    check = True
+    while check:
         try:
             for i in range(0, len(message), 2):
                 u = int(message[i])
                 t = int(message[i + 1])
                 code.append(v[u][t])
-            chck = False
+            check = False
         except:
             print("invalid input")
             break
@@ -165,7 +165,7 @@ def formatting(arr):
 
 
 def search(arr):
-    word_list = words.words()
+    word_list = words.words('en')
     good_words = []
     for i in range(0, len(word_list)):
         for j in range(0, len(arr)):
@@ -254,16 +254,28 @@ def vignere_decode(message, key):
 
 
 def vignere_brute(message):
-    file = open('testdata.txt', 'w')
+    file = open('testdata.txt', 'r+')
+    file.truncate()
     x = []
-    word_list = words.words()
+    word_list = words.words('en')
     for i in range(0, len(word_list)):
-        l = vignere_decode(message, word_list[i])
-        s = ''.join(l)
-        file.write(s)
-        file.write('\n')
-        x.append(s)
-    search(x)
+        if len(word_list[i]) > len(message) or '-' in word_list[i]:
+            continue
+        else:
+            l = vignere_decode(message, word_list[i])
+            s = ''.join(l)
+            # s = s.encode('utf-8')
+            file.write("Solution:")
+            file.write(s)
+            file.write('\n')
+            file.write("Key:")
+            file.write(word_list[i])
+            file.write('\n')
+            file.write('\n')
+            x.append(s)
+    print("Data available in testdata.txt")
+    # search(x)
+    file.close()
 
 
 def main():
