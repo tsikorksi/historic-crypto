@@ -1,5 +1,6 @@
 from nltk.corpus import words
 import time
+# TODO : Brute force solutions for vignere, dictionary, kasisky and kerckhoffs
 
 
 def noting(data):
