@@ -109,7 +109,7 @@ def noring(data, key):
         j += 1
 
 
-def decode(message):
+def polybius_decode(message):
     # done
     a = ["A", "B", "C", "D", "E", "F"]
     b = ["G", "H", "I", "J", "K", "L"]
@@ -121,19 +121,19 @@ def decode(message):
     code = []
     check = True
     while check:
-        try:
-            for i in range(0, len(message), 2):
-                u = int(message[i])
-                t = int(message[i + 1])
-                code.append(v[u][t])
-            check = False
-        except:
-            print("invalid input")
-            break
+        # try:
+        for i in range(0, len(message), 2):
+            u = int(message[i])
+            t = int(message[i + 1])
+            code.append(v[u][t])
+        check = False
+        # except:
+        # print("invalid input")
+        # break
     formatting(code)
 
 
-def encode(message):
+def polybius_encode(message):
     a = ["A", "B", "C", "D", "E", "F"]
     b = ["G", "H", "I", "J", "K", "L"]
     c = ["M", "N", "O", "P", "Q", "R"]
@@ -163,21 +163,6 @@ def formatting(arr):
     for i in range(0, len(arr)):
         print(arr[i], end='')
     print("\n")
-
-
-def search(arr):
-    good_words = []
-    word_list = words.words('en')
-    for i in range(0, len(word_list)):
-        if len(word_list[i]) > len(arr[i]) or '-' in word_list[i]:
-            continue
-        else:
-            matching = [s for s in arr if word_list[i] in s]
-        good_words.append(''.join(matching))
-    print("Showing results containing common english words")
-    time.sleep(2)
-    formatting(good_words)
-    # hi = str(input(""))
 
 
 def shift_encode(message, shift):
@@ -256,10 +241,24 @@ def vignere_decode(message, key):
     return x
 
 
+def search(sub_string):
+    # TODO : finish search function, narrow results
+    matching = []
+    with open('word_lists.txt', 'r') as f:
+        word_list = f.readlines()
+    for i in range(0, len(word_list)):
+        if len(word_list[i]) > len(sub_string):
+            continue
+        else:
+            matching = [s for s in sub_string if word_list[i] in s]
+    return matching
+
+
 def vignere_brute(message):
-    file = open('testdata.txt', 'r+')
-    file.truncate()
+    good_words = []
     x = []
+    file = open('test_data.txt', 'r+')
+    file.truncate()
     word_list = words.words('en')
     for i in range(0, len(word_list)):
         if len(word_list[i]) > len(message) or '-' in word_list[i]:
@@ -267,7 +266,6 @@ def vignere_brute(message):
         else:
             l = vignere_decode(message, word_list[i])
             s = ''.join(l)
-            # s = s.encode('utf-8')
             file.write("Solution:")
             file.write(s)
             file.write('\n')
@@ -276,10 +274,14 @@ def vignere_brute(message):
             file.write('\n')
             file.write('\n')
             x.append(s)
-    print("Data available in testdata.txt")
-    time.sleep(2)
-    search(x)
-    file.close()
+    print("Data available in test_data.txt")
+    print("Showing results containing common english words")
+    time.sleep(1)
+    for i in range(0, len(x)):
+        p = ''.join(search(x[i]))
+        good_words.append(p)
+        good_words.append('\n')
+    formatting(good_words)
 
 
 def main():
@@ -317,10 +319,10 @@ def main():
             message = ''.join(e for e in message if e.isalnum())
             if hi == "0":
                 # return message
-                decode(message)
+                polybius_decode(message)
             elif hi == "1":
                 # return message
-                encode(message)
+                polybius_encode(message)
             else:
                 print("invalid input")
         elif begin == "2":
