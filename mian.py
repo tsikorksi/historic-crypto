@@ -1,6 +1,7 @@
 from nltk.corpus import words
 import time
-# TODO : Brute force solutions for vignere, dictionary, kasisky and kerckhoffs
+# TODO : Brute force solutions for vignere: kasisky and kerckhoffs
+# DONE : dictionary
 
 
 def noting(data):
@@ -165,12 +166,14 @@ def formatting(arr):
 
 
 def search(arr):
-    word_list = words.words('en')
     good_words = []
+    word_list = words.words('en')
     for i in range(0, len(word_list)):
-        for j in range(0, len(arr)):
-            if word_list[i] in arr[i]:
-                good_words.append(arr[i])
+        if len(word_list[i]) > len(arr[i]) or '-' in word_list[i]:
+            continue
+        else:
+            matching = [s for s in arr if word_list[i] in s]
+        good_words.append(''.join(matching))
     print("Showing results containing common english words")
     time.sleep(2)
     formatting(good_words)
@@ -274,7 +277,8 @@ def vignere_brute(message):
             file.write('\n')
             x.append(s)
     print("Data available in testdata.txt")
-    # search(x)
+    time.sleep(2)
+    search(x)
     file.close()
 
 
