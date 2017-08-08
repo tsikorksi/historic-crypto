@@ -247,10 +247,10 @@ def search(sub_string):
     with open('word_lists.txt', 'r') as f:
         word_list = f.readlines()
     for i in range(0, len(word_list)):
-        if len(word_list[i]) > len(sub_string):
-            continue
-        else:
-            matching = [s for s in sub_string if word_list[i] in s]
+        word_list[i].replace('\n', '')
+        if word_list[i] in str(sub_string):
+            # print('check')
+            matching.append(sub_string)
     return matching
 
 
@@ -278,9 +278,8 @@ def vignere_brute(message):
     print("Showing results containing common english words")
     time.sleep(1)
     for i in range(0, len(x)):
-        p = ''.join(search(x[i]))
-        good_words.append(p)
-        good_words.append('\n')
+        good_words.append(search(x[i]))
+        # good_words.append('\n')
     formatting(good_words)
 
 
