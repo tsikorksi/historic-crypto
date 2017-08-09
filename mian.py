@@ -1,10 +1,15 @@
 from nltk.corpus import words
 import time
 # TODO : Brute force solutions for vignere: kasisky and kerckhoffs
+# TODO : add comments, make prints more descriptive
 # DONE : dictionary
 
 
 def noting(data):
+    """
+    :param data:
+    :return:
+    """
     data = list(data)
     for i in range(0, len(data)):
         if data[i] == "1":
@@ -15,6 +20,11 @@ def noting(data):
 
 
 def xoring(data, key):
+    """
+    :param data:
+    :param key:
+    :return:
+    """
     key = list(key)
     data = list(data)
     j = 0
@@ -34,6 +44,11 @@ def xoring(data, key):
 
 
 def anding(data, key):
+    """
+    :param data:
+    :param key:
+    :return:
+    """
     key = list(key)
     data = list(data)
     j = 0
@@ -53,6 +68,11 @@ def anding(data, key):
 
 
 def oring(data, key):
+    """
+    :param data:
+    :param key:
+    :return:
+    """
     key = list(key)
     data = list(data)
     j = 0
@@ -72,6 +92,11 @@ def oring(data, key):
 
 
 def nanding(data, key):
+    """
+    :param data:
+    :param key:
+    :return:
+    """
     key = list(key)
     data = list(data)
     j = 0
@@ -91,6 +116,11 @@ def nanding(data, key):
 
 
 def noring(data, key):
+    """
+    :param data:
+    :param key:
+    :return:
+    """
     key = list(key)
     data = list(data)
     j = 0
@@ -110,6 +140,10 @@ def noring(data, key):
 
 
 def polybius_decode(message):
+    """
+    :param message:
+    :return:
+    """
     # done
     a = ["A", "B", "C", "D", "E", "F"]
     b = ["G", "H", "I", "J", "K", "L"]
@@ -134,6 +168,10 @@ def polybius_decode(message):
 
 
 def polybius_encode(message):
+    """
+    :param message:
+    :return:
+    """
     a = ["A", "B", "C", "D", "E", "F"]
     b = ["G", "H", "I", "J", "K", "L"]
     c = ["M", "N", "O", "P", "Q", "R"]
@@ -160,12 +198,21 @@ def polybius_encode(message):
 
 
 def formatting(arr):
+    """
+    :param arr:
+    :return:
+    """
     for i in range(0, len(arr)):
         print(arr[i], end='')
     print("\n")
 
 
 def shift_encode(message, shift):
+    """
+    :param message:
+    :param shift:
+    :return:
+    """
     x = []
     if shift >= 26:
         shift = shift % 26
@@ -180,6 +227,11 @@ def shift_encode(message, shift):
 
 
 def shift_decode(message, shift):
+    """
+    :param message:
+    :param shift:
+    :return:
+    """
     x = []
     if shift >= 26:
         shift = shift % 26
@@ -193,6 +245,10 @@ def shift_decode(message, shift):
 
 
 def shift_brute(message):
+    """
+    :param message:
+    :return:
+    """
     x = []
     for i in range(0, 26):
         for j in range(0, len(message)):
@@ -207,6 +263,11 @@ def shift_brute(message):
 
 
 def vignere_encode(message, key):
+    """
+    :param message:
+    :param key:
+    :return:
+    """
     x = []
     dex = 0
     for i in range(0, len(message)):
@@ -224,6 +285,11 @@ def vignere_encode(message, key):
 
 
 def vignere_decode(message, key):
+    """
+    :param message:
+    :param key:
+    :return:
+    """
     x = []
     dex = 0
     for i in range(0, len(message)):
@@ -242,6 +308,10 @@ def vignere_decode(message, key):
 
 
 def search(sub_string):
+    """
+    :param sub_string:
+    :return:
+    """
     # TODO : finish search function, narrow results
     matching = []
     with open('word_lists.txt', 'r') as f:
@@ -255,6 +325,10 @@ def search(sub_string):
 
 
 def vignere_brute(message):
+    """
+    :param message:
+    :return:
+    """
     good_words = []
     x = []
     file = open('test_data.txt', 'r+')
@@ -284,6 +358,9 @@ def vignere_brute(message):
 
 
 def main():
+    """
+    :return:
+    """
     fun = True
     while fun:
         begin = str(input("0 = gates 1 = polybius 2 = shift 3 = vignere"))
