@@ -121,15 +121,15 @@ def polybius_decode(message):
     code = []
     check = True
     while check:
-        # try:
-        for i in range(0, len(message), 2):
-            u = int(message[i])
-            t = int(message[i + 1])
-            code.append(v[u][t])
-        check = False
-        # except:
-        # print("invalid input")
-        # break
+        try:
+            for i in range(0, len(message), 2):
+                u = int(message[i])
+                t = int(message[i + 1])
+                code.append(v[u][t])
+            check = False
+        except ValueError:
+            print("invalid input")
+            break
     formatting(code)
 
 
