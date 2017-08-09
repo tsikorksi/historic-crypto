@@ -1,6 +1,6 @@
 from nltk.corpus import words
 import time
-# TODO : Brute force solutions for vignere: kasisky and kerckhoffs
+# TODO : Brute force solutions for vignere: kasisky examination
 # TODO : add comments, make prints more descriptive
 # DONE : dictionary
 
@@ -389,8 +389,29 @@ def vignere_brute(message):
             check = False
 
 
-def vignere_examination(message):
-    pass
+def vignere_examination_distance(message):
+    # TODO : implement kasiski
+    # brute force find the number of 3 letter repeated sequences
+    # then: use these to get the distance
+    # Crack!
+    """
+    :param message:
+    :return:
+    """
+    groups = []
+    for i in range(0, len(message)):
+        for j in range(0, len(message), i):
+            sequence = message[i:j]
+            groups.append(sequence)
+            groups.append(0)
+            for k in range(0, len(message)):
+                if sequence in message[i:i+len(sequence)]:
+                    groups[j+1] += 1
+
+
+def vignere_examination_main(message):
+    vignere_examination_distance(message)
+    return message
 
 
 def main():
@@ -462,7 +483,10 @@ def main():
                 key = str(input("input key"))
                 vignere_decode(message, key)
             elif yuy == "2":
-                vignere_brute(message)
+                if len(message) > 8:
+                    vignere_examination_main(message)
+                else:
+                    vignere_brute(message)
             else:
                 print("invalid input")
         else:
