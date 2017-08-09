@@ -315,14 +315,14 @@ def vignere_decode(message, key):
     return x
 
 
-def search(sub_string):
+def search(sub_string, word_data):
     """
     :param sub_string:
     :return:
     """
     matching = []
     file = open('test_data_two.txt', 'a')
-    with open('word_lists_10000.txt', 'r') as f:
+    with open(word_data, 'r') as f:
         word_list = f.readlines()
     for i in range(0, len(word_list)):
         current_word = word_list[i]
@@ -332,7 +332,7 @@ def search(sub_string):
             file.write("Solution:")
             file.write(sub_string)
             file.write('\n')
-            file.write("Word Found:")
+            file.write("Word found:")
             file.write(current_word)
             file.write('\n')
             file.write('\n')
@@ -345,7 +345,6 @@ def vignere_brute(message):
     :param message:
     :return:
     """
-    good_words = []
     x = []
     file = open('test_data.txt', 'r+')
     file.truncate()
@@ -368,13 +367,25 @@ def vignere_brute(message):
     print("Data available in test_data.txt")
     print("Showing results containing common english words")
     time.sleep(1)
-    for i in range(0, len(x)):
-        g = search(x[i])
+    check = True
+    num_check = 0
+    lists = ['word_lists_500.txt', 'word_lists_10000.txt']
+    while check:
+        good_words = []
+        for i in range(0, len(x)):
+            g = search(x[i], lists[num_check])
         # print(g)
-        good_words = good_words + g
+            good_words = good_words + g
         # good_words.append('\n')
-    alt_formatting(good_words)
-    print("Data available in test_data_two.txt")
+        alt_formatting(good_words)
+        print("Data available in test_data_two.txt")
+        he = str(input("Continue with wider search parameters? y/n"))
+        if he == 'y':
+            print('Loading...')
+            num_check += 1
+            # continue
+        else:
+            check = False
 
 
 def main():
