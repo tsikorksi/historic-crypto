@@ -317,6 +317,7 @@ def vignere_decode(message, key):
 
 def search(sub_string, word_data):
     """
+    :param word_data:
     :param sub_string:
     :return:
     """
@@ -369,7 +370,7 @@ def vignere_brute(message):
     time.sleep(1)
     check = True
     num_check = 0
-    lists = ['word_lists_500.txt', 'word_lists_10000.txt']
+    lists = ['word_lists_500.txt', 'word_lists_2500.txt', 'word_lists_5000.txt', 'word_lists_10000.txt']
     while check:
         good_words = []
         for i in range(0, len(x)):
@@ -429,10 +430,8 @@ def main():
             message = str(input())
             message = ''.join(e for e in message if e.isalnum())
             if hi == "0":
-                # return message
                 polybius_decode(message)
             elif hi == "1":
-                # return message
                 polybius_encode(message)
             else:
                 print("invalid input")
