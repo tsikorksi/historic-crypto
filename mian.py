@@ -330,10 +330,10 @@ def search(sub_string, word_data):
         current_word = ''.join(ch for ch in current_word if ch.isalnum())
         if current_word in sub_string and len(current_word) > 2:
             matching.append(sub_string)
-            file.write("Solution:")
+            file.write("Solution: ")
             file.write(sub_string)
             file.write('\n')
-            file.write("Word found:")
+            file.write("Word found: ")
             file.write(current_word)
             file.write('\n')
             file.write('\n')
@@ -378,7 +378,7 @@ def vignere_brute(message):
         # print(g)
             good_words = good_words + g
         # good_words.append('\n')
-        alt_formatting(good_words)
+        # alt_formatting(good_words)
         print("Data available in test_data_two.txt")
         he = str(input("Continue with wider search parameters? y/n"))
         if he == 'y':
@@ -387,6 +387,10 @@ def vignere_brute(message):
             # continue
         else:
             check = False
+
+
+def vignere_examination(message):
+    pass
 
 
 def main():

@@ -4,8 +4,11 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1bb6e559-99c0-48e4-add7-e1d851df4a63" name="Default" comment="">
+    <list default="true" id="1bb6e559-99c0-48e4-add7-e1d851df4a63" name="Default" comment="typos">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mian.py" afterPath="$PROJECT_DIR$/mian.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test_data.txt" afterPath="$PROJECT_DIR$/test_data.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test_data_two.txt" afterPath="$PROJECT_DIR$/test_data_two.txt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,20 +25,23 @@
       <file leaf-file-name="mian.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mian.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="69" column="4" lean-forward="false" selection-start-line="69" selection-start-column="4" selection-end-line="69" selection-end-column="4" />
+            <state relative-caret-position="420">
+              <caret line="392" column="8" lean-forward="false" selection-start-line="392" selection-start-column="8" selection-end-line="392" selection-end-column="8" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
+                <marker date="1502309650450" expanded="true" signature="7045:7142" ph="..." />
+                <marker date="1502309650450" expanded="true" signature="10663:10704" ph="..." />
+                <marker date="1502309650450" expanded="true" signature="10732:10773" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="word_lists_5000.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/word_lists_5000.txt">
+      <file leaf-file-name="test_data_two.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test_data_two.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="806">
-              <caret line="4999" column="6" lean-forward="false" selection-start-line="4999" selection-start-column="6" selection-end-line="4999" selection-end-column="6" />
+            <state relative-caret-position="273798">
+              <caret line="13038" column="12" lean-forward="false" selection-start-line="13038" selection-start-column="12" selection-end-line="13038" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -46,6 +52,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>test</find>
+      <find>at</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -55,12 +62,12 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/test_data.txt" />
-        <option value="$PROJECT_DIR$/test_data_two.txt" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/word_lists_2500" />
         <option value="$PROJECT_DIR$/word_lists_5000.txt" />
         <option value="$PROJECT_DIR$/mian.py" />
+        <option value="$PROJECT_DIR$/test_data_two.txt" />
       </list>
     </option>
   </component>
@@ -300,7 +307,14 @@
       <option name="project" value="LOCAL" />
       <updated>1502307341928</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="typos">
+      <created>1502307779465</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1502307779465</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView">
@@ -317,7 +331,7 @@
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32915717" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10250569" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32915717" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -363,21 +377,14 @@
     <MESSAGE value="removed todo" />
     <MESSAGE value="added expanded search parameters" />
     <MESSAGE value="added more expanded search parameters" />
-    <option name="LAST_COMMIT_MESSAGE" value="added more expanded search parameters" />
+    <MESSAGE value="typos" />
+    <option name="LAST_COMMIT_MESSAGE" value="typos" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test_data.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1069383">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/word_lists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-209399">
@@ -423,26 +430,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_data_two.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/word_lists_2500.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="2472" column="4" lean-forward="false" selection-start-line="2472" selection-start-column="4" selection-end-line="2472" selection-end-column="4" />
           <folding />
         </state>
       </provider>
@@ -463,12 +454,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test_data.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="594948" column="21" lean-forward="true" selection-start-line="594948" selection-start-column="21" selection-end-line="594948" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/word_lists_2500.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2121">
+          <caret line="101" column="3" lean-forward="false" selection-start-line="101" selection-start-column="1" selection-end-line="101" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_data_two.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273798">
+          <caret line="13038" column="12" lean-forward="false" selection-start-line="13038" selection-start-column="12" selection-end-line="13038" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mian.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="69" column="4" lean-forward="false" selection-start-line="69" selection-start-column="4" selection-end-line="69" selection-end-column="4" />
+        <state relative-caret-position="420">
+          <caret line="392" column="8" lean-forward="false" selection-start-line="392" selection-start-column="8" selection-end-line="392" selection-end-column="8" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
+            <marker date="1502309650450" expanded="true" signature="7045:7142" ph="..." />
+            <marker date="1502309650450" expanded="true" signature="10663:10704" ph="..." />
+            <marker date="1502309650450" expanded="true" signature="10732:10773" ph="..." />
           </folding>
         </state>
       </provider>
