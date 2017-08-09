@@ -207,6 +207,12 @@ def formatting(arr):
     print("\n")
 
 
+def alt_formatting(arr):
+    for i in range(0, len(arr)):
+        print(arr[i], end='')
+        print("\n")
+
+
 def shift_encode(message, shift):
     """
     :param message:
@@ -288,7 +294,7 @@ def vignere_decode(message, key):
     """
     :param message:
     :param key:
-    :return:
+    :return: x
     """
     x = []
     dex = 0
@@ -304,6 +310,8 @@ def vignere_decode(message, key):
         dex += 1
         x.append(chr(temp))
     formatting(x)
+    # print(x)
+    x = ''.join(x)
     return x
 
 
@@ -317,10 +325,13 @@ def search(sub_string):
     with open('word_lists.txt', 'r') as f:
         word_list = f.readlines()
     for i in range(0, len(word_list)):
-        word_list[i].replace('\n', '')
-        if word_list[i] in str(sub_string):
+        current_word = word_list[i]
+        current_word = ''.join(ch for ch in current_word if ch.isalnum())
+        # print(current_word)
+        if current_word in sub_string:
             # print('check')
             matching.append(sub_string)
+            break
     return matching
 
 
@@ -339,22 +350,24 @@ def vignere_brute(message):
             continue
         else:
             l = vignere_decode(message, word_list[i])
-            s = ''.join(l)
+            # s = ''.join(l)
             file.write("Solution:")
-            file.write(s)
+            file.write(l)
             file.write('\n')
             file.write("Key:")
             file.write(word_list[i])
             file.write('\n')
             file.write('\n')
-            x.append(s)
+            x.append(l)
     print("Data available in test_data.txt")
     print("Showing results containing common english words")
     time.sleep(1)
     for i in range(0, len(x)):
-        good_words.append(search(x[i]))
+        g = search(x[i])
+        # print(g)
+        good_words = good_words + g
         # good_words.append('\n')
-    formatting(good_words)
+    alt_formatting(good_words)
 
 
 def main():
