@@ -320,7 +320,6 @@ def search(sub_string):
     :param sub_string:
     :return:
     """
-    # TODO : finish search function, narrow results
     matching = []
     with open('word_lists.txt', 'r') as f:
         word_list = f.readlines()
