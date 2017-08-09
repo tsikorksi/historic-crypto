@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1bb6e559-99c0-48e4-add7-e1d851df4a63" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/word_lists.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/word_lists_backup.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test_data.txt" afterPath="$PROJECT_DIR$/test_data.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test_data_two.txt" afterPath="$PROJECT_DIR$/test_data_two.txt" />
     </list>
@@ -17,11 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="mian.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="mian.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mian.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="63">
-              <caret line="312" column="14" lean-forward="true" selection-start-line="312" selection-start-column="14" selection-end-line="312" selection-end-column="14" />
+            <state relative-caret-position="441">
+              <caret line="336" column="28" lean-forward="true" selection-start-line="336" selection-start-column="28" selection-end-line="336" selection-end-column="28" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -29,10 +31,30 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="word_lists.txt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/word_lists.txt">
+      <file leaf-file-name="word_lists_10000.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/word_lists_10000.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-208328">
+            <state relative-caret-position="-209110">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_data_two.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test_data_two.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="173">
+              <caret line="3894" column="13" lean-forward="false" selection-start-line="3894" selection-start-column="9" selection-end-line="3894" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_data.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test_data.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1078946">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -41,12 +63,19 @@
       </file>
     </leaf>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>test</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/test_data_two.txt" />
+        <option value="$PROJECT_DIR$/test_data.txt" />
         <option value="$PROJECT_DIR$/mian.py" />
       </list>
     </option>
@@ -177,7 +206,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.120300755" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32915717" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32915717" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -226,7 +255,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/word_lists_backup.txt">
+    <entry file="file://$PROJECT_DIR$/word_lists_500.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -234,21 +263,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mian.py">
+    <entry file="file://$PROJECT_DIR$/word_lists_10000.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="312" column="14" lean-forward="true" selection-start-line="312" selection-start-column="14" selection-end-line="312" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-209110">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/word_lists.txt">
+    <entry file="file://$PROJECT_DIR$/test_data.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-208328">
+        <state relative-caret-position="-1078946">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_data_two.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="3894" column="13" lean-forward="false" selection-start-line="3894" selection-start-column="9" selection-end-line="3894" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mian.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="336" column="28" lean-forward="true" selection-start-line="336" selection-start-column="28" selection-end-line="336" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

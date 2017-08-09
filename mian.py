@@ -322,7 +322,7 @@ def search(sub_string):
     """
     matching = []
     file = open('test_data_two.txt', 'a')
-    with open('word_lists.txt', 'r') as f:
+    with open('word_lists_10000.txt', 'r') as f:
         word_list = f.readlines()
     for i in range(0, len(word_list)):
         current_word = word_list[i]
@@ -332,7 +332,7 @@ def search(sub_string):
             file.write("Solution:")
             file.write(sub_string)
             file.write('\n')
-            file.write("Key:")
+            file.write("Word Found:")
             file.write(current_word)
             file.write('\n')
             file.write('\n')
