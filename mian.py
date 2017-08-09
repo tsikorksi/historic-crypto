@@ -322,15 +322,21 @@ def search(sub_string):
     """
     # TODO : finish search function, narrow results
     matching = []
+    file = open('test_data_two.txt', 'a')
     with open('word_lists.txt', 'r') as f:
         word_list = f.readlines()
     for i in range(0, len(word_list)):
         current_word = word_list[i]
         current_word = ''.join(ch for ch in current_word if ch.isalnum())
-        # print(current_word)
-        if current_word in sub_string:
-            # print('check')
+        if current_word in sub_string and len(current_word) > 2:
             matching.append(sub_string)
+            file.write("Solution:")
+            file.write(sub_string)
+            file.write('\n')
+            file.write("Key:")
+            file.write(current_word)
+            file.write('\n')
+            file.write('\n')
             break
     return matching
 
@@ -350,6 +356,7 @@ def vignere_brute(message):
             continue
         else:
             l = vignere_decode(message, word_list[i])
+            # saving_data(l, word_list[i])
             # s = ''.join(l)
             file.write("Solution:")
             file.write(l)
@@ -368,9 +375,14 @@ def vignere_brute(message):
         good_words = good_words + g
         # good_words.append('\n')
     alt_formatting(good_words)
+    print("Data available in test_data_two.txt")
 
 
 def main():
+    file = open('test_data.txt', 'r+')
+    file.truncate()
+    file_two = open('test_data_two.txt', 'r+')
+    file_two.truncate()
     """
     :return:
     """
