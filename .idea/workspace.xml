@@ -23,8 +23,8 @@
       <file leaf-file-name="mian.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mian.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="428" column="0" lean-forward="true" selection-start-line="428" selection-start-column="0" selection-end-line="428" selection-end-column="0" />
+            <state relative-caret-position="568">
+              <caret line="433" column="35" lean-forward="true" selection-start-line="433" selection-start-column="35" selection-end-line="433" selection-end-column="35" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -204,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1502376830827</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="continuing work on part 2 of kasiski examination">
+      <created>1502378000706</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1502378000706</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -296,7 +303,8 @@
     <MESSAGE value="added more expanded search parameters" />
     <MESSAGE value="typos" />
     <MESSAGE value="implemeted part 1 of kasiski examination" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemeted part 1 of kasiski examination" />
+    <MESSAGE value="continuing work on part 2 of kasiski examination" />
+    <option name="LAST_COMMIT_MESSAGE" value="continuing work on part 2 of kasiski examination" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -392,8 +400,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mian.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="428" column="0" lean-forward="true" selection-start-line="428" selection-start-column="0" selection-end-line="428" selection-end-column="0" />
+        <state relative-caret-position="568">
+          <caret line="433" column="35" lean-forward="true" selection-start-line="433" selection-start-column="35" selection-end-line="433" selection-end-column="35" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>

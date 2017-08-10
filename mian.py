@@ -429,8 +429,12 @@ def vignere_examination_crack(distance, start_pos):
 
 
 def vignere_examination_main(message):
-    key, distance, start_pos = vignere_examination_distance(message)
-    vignere_examination_crack(distance, start_pos)
+    groups = vignere_examination_count(message)
+    key, distance, start_pos = vignere_examination_distance(groups)
+    for i in range(0, len(groups)):
+        groups = [x for x in groups if x != key]
+        key, distance, start_pos = vignere_examination_distance(groups)
+        vignere_examination_crack(distance, start_pos)
     # for i in range(0, key):
 
 
