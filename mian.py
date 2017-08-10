@@ -1,7 +1,6 @@
 from nltk.corpus import words
 import time
 # TODO : add comments, make prints more descriptive
-# TODO : Implement Kasiski examination
 # DONE : dictionary
 
 
@@ -406,7 +405,7 @@ def vignere_examination_count(message):
 
 
 def vignere_examination_distance(groups):
-    # then: use these to get the distance //DONE
+    # use results from vignere_examination_count to get the distance between them //DONE
     """
     :param groups:
     :return repeat:
@@ -414,7 +413,6 @@ def vignere_examination_distance(groups):
     """
     count = 0
     repeat = ''
-    # groups = []
     for i in range(0, len(groups)):
         if groups.count(groups[i]) > count:
             count = groups.count(groups[i])
@@ -425,18 +423,34 @@ def vignere_examination_distance(groups):
     return repeat, first_distance, start_pos
 
 
-def vignere_examination_crack(distance, start_pos):
+def vignere_examination_crack(distance, start_pos, message):
+    # To be rewritten
+    cipher_text = []
+    for i in range(start_pos, len(message), distance):
+        cipher_text.append(message[i])
+    shift_brute(''.join(cipher_text))
+    # for start_pos in range(start_pos, start_pos + distance):
+    #     for i in range():
+    #     cipher_text = message[start_pos]
     return distance, start_pos
 
 
 def vignere_examination_main(message):
+    # TODO: factor distances, most common factor is key len
+    # TODO: implement this into dictionary brute force
+    # TODO: divide and shift brute-force depending on key len
+    # ignore vignere_examination_crack and _main, currently ded
+    # https://en.wikipedia.org/wiki/Kasiski_examination
+    factors = []
+    # nugciloygcmxjeenoakmrpafgilutbnlewntvhxukrksunuxcnwoygcmxkslvienlnpa key: cat
     groups = vignere_examination_count(message)
     key, distance, start_pos = vignere_examination_distance(groups)
-    vignere_examination_crack(distance, start_pos)
+    factors.append(distance)
+    vignere_examination_crack(distance, start_pos, message)
     for i in range(0, len(groups)):
-        groups = [x for x in groups if x != key]
+        groups = [x for x in groups if x != key and key > 1]
         key, distance, start_pos = vignere_examination_distance(groups)
-        vignere_examination_crack(distance, start_pos)
+        vignere_examination_crack(distance, start_pos, message)
     # for i in range(0, key):
 
 
