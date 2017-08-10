@@ -389,7 +389,7 @@ def vignere_brute(message):
 
 
 def vignere_examination_count(message):
-    # brute force find the number of 3 letter repeated sequences //DONE
+    # brute force finds 3 letter repeated sequences and returns as array //DONE
     """
     :param message:
     :return groups:
@@ -420,19 +420,22 @@ def vignere_examination_distance(groups):
     first_distance = len(groups)
     start_pos = groups.index(repeat)
     # print(groups, '\n', message)
-    return repeat, first_distance, start_pos
+    return first_distance, start_pos
 
 
-def vignere_examination_crack(distance, start_pos, message):
-    # To be rewritten
-    cipher_text = []
-    for i in range(start_pos, len(message), distance):
-        cipher_text.append(message[i])
-    shift_brute(''.join(cipher_text))
-    # for start_pos in range(start_pos, start_pos + distance):
-    #     for i in range():
-    #     cipher_text = message[start_pos]
-    return distance, start_pos
+def factors():
+    # TODO: get most common factor, which is len of key
+
+# def vignere_examination_crack(distance, start_pos, message):
+#     # To be rewritten
+#     # cipher_text = []
+#     # for i in range(start_pos, len(message), distance):
+#     #     cipher_text.append(message[i])
+#     # shift_brute(''.join(cipher_text))
+#     # for start_pos in range(start_pos, start_pos + distance):
+#     #     for i in range():
+#     #     cipher_text = message[start_pos]
+#     return distance, start_pos
 
 
 def vignere_examination_main(message):
@@ -444,12 +447,12 @@ def vignere_examination_main(message):
     factors = []
     # nugciloygcmxjeenoakmrpafgilutbnlewntvhxukrksunuxcnwoygcmxkslvienlnpa key: cat
     groups = vignere_examination_count(message)
-    key, distance, start_pos = vignere_examination_distance(groups)
+    distance, start_pos = vignere_examination_distance(groups)
     factors.append(distance)
     vignere_examination_crack(distance, start_pos, message)
     for i in range(0, len(groups)):
         groups = [x for x in groups if x != key and key > 1]
-        key, distance, start_pos = vignere_examination_distance(groups)
+        distance, start_pos = vignere_examination_distance(groups)
         vignere_examination_crack(distance, start_pos, message)
     # for i in range(0, key):
 
@@ -464,34 +467,36 @@ def main():
     """
     fun = True
     while fun:
-        begin = str(input("0 = gates 1 = polybius 2 = shift 3 = vignere x = exit"))
+        begin = str(input("0 = Logic gates 1 = Polybius 2 = Shift/Caeser 3 = Vigenere x = Exit"))
         if begin == "0":
+            print("Basic logic gates, input binary and key to get output.")
             x = str(input("0 = NOT 1 = AND 2 = OR 3 = NAND 4 = XOR 5 = NOR"))
-            data = str(input("input data"))
+            data = str(input("Input data"))
             if x == "0":
                 noting(data)
             elif x == "1":
-                key = str(input("input key"))
+                key = str(input("Input key"))
                 anding(data, key)
             elif x == "2":
-                key = str(input("input key"))
+                key = str(input("Input key"))
                 oring(data, key)
             elif x == "3":
-                key = str(input("input key"))
+                key = str(input("Input key"))
                 nanding(data, key)
             elif x == "4":
-                key = str(input("input key"))
+                key = str(input("Input key"))
                 xoring(data, key)
             elif x == "5":
-                key = str(input("input key"))
+                key = str(input("Input key"))
                 noring(data, key)
             else:
-                print("invalid input")
+                print("Invalid input")
             print('')
         elif begin == "1":
-            print("choose mode 0 = decode 1 = encode")
+            print('The polybius cipher uses a square of letters to convert a plaintext message to numbers.')
+            print("Choose mode 0 = decode 1 = encode")
             hi = str(input())
-            print("input message")
+            print("Input message")
             message = str(input())
             message = ''.join(e for e in message if e.isalnum())
             if hi == "0":
@@ -501,26 +506,28 @@ def main():
             else:
                 print("invalid input")
         elif begin == "2":
-            yuy = str(input("0 = encode 1 = decode 2 = brute"))
-            message = str(input("input message"))
+            print('Caeser or shift cipher, which works by shifting the alphabet a number of positions.')
+            yuy = str(input("0 = Encode 1 = Decode 2 = Brute force"))
+            message = str(input("Input message"))
             if yuy == "0":
-                shift = int(input("input shift"))
+                shift = int(input("Input shift (integer)"))
                 shift_encode(message, shift)
             elif yuy == "1":
-                shift = int(input("input shift"))
+                shift = int(input("input shift (integer)"))
                 shift_decode(message, shift)
             elif yuy == "2":
                 shift_brute(message)
             else:
-                print("invalid input")
+                print("Invalid input")
         elif begin == "3":
-            yuy = str(input("0 = encode 1 = decode 2 = brute"))
-            message = str(input("input message"))
+            print('Vignere cipher is a polyalphabetic cipher.')
+            yuy = str(input("0 = Encode 1 = Decode 2 = Brute"))
+            message = str(input("Input message"))
             if yuy == "0":
-                key = str(input("input key"))
+                key = str(input("Input key"))
                 vignere_encode(message, key)
             elif yuy == "1":
-                key = str(input("input key"))
+                key = str(input("Input key"))
                 vignere_decode(message, key)
             elif yuy == "2":
                 if len(message) > 8:
