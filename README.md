@@ -5,7 +5,7 @@ Includes :
 - Logic gates
 - Caesar/shift cipher; encoding, decoding and brute forcing
 - Polybius; encoding and decoding
-- Vignere; encoding , decoding, dictionary brute-forcing (working on kasiski examination)
+- Vigenere; encoding , decoding, dictionary brute-forcing (working on kasiski examination)
 
 Requires: pip install nltk, nltk.download() : http://www.nltk.org/
 
