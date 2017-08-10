@@ -412,19 +412,29 @@ def vignere_examination_distance(groups):
     :return first_distance:
     """
     count = 0
-    repeat = ''
+    repeated = ''
     for i in range(0, len(groups)):
-        if groups.count(groups[i]) > count:
-            count = groups.count(groups[i])
-            repeat = groups[i]
-    first_distance = len(groups)
-    start_pos = groups.index(repeat)
+        if groups[count] == 'xxx':
+            count += 1
+        else:
+            break
+    repeat = groups[count]
+
+    # start_pos = groups.index(repeat)
     # print(groups, '\n', message)
-    return first_distance, start_pos
+    return distance
 
 
-def factors():
+def factorisation(message):
     # TODO: get most common factor, which is len of key
+    groups = vignere_examination_count(message)
+    factors = []
+    for i in range(0, len(groups)):
+        distance = vignere_examination_distance(groups)
+        factors.append(distance)
+        for k in range(len(groups)):
+            groups = ['xxx' if x == groups[k] else x for x in groups]
+    print(factors)
 
 # def vignere_examination_crack(distance, start_pos, message):
 #     # To be rewritten
@@ -439,22 +449,23 @@ def factors():
 
 
 def vignere_examination_main(message):
+    factorisation(message)
     # TODO: factor distances, most common factor is key len
     # TODO: implement this into dictionary brute force
     # TODO: divide and shift brute-force depending on key len
     # ignore vignere_examination_crack and _main, currently ded
     # https://en.wikipedia.org/wiki/Kasiski_examination
-    factors = []
-    # nugciloygcmxjeenoakmrpafgilutbnlewntvhxukrksunuxcnwoygcmxkslvienlnpa key: cat
-    groups = vignere_examination_count(message)
-    distance, start_pos = vignere_examination_distance(groups)
-    factors.append(distance)
-    vignere_examination_crack(distance, start_pos, message)
-    for i in range(0, len(groups)):
-        groups = [x for x in groups if x != key and key > 1]
-        distance, start_pos = vignere_examination_distance(groups)
-        vignere_examination_crack(distance, start_pos, message)
-    # for i in range(0, key):
+    # factors = []
+    # # nugciloygcmxjeenoakmrpafgilutbnlewntvhxukrksunuxcnwoygcmxkslvienlnpa key: cat
+    # groups = vignere_examination_count(message)
+    # distance, start_pos = vignere_examination_distance(groups)
+    # factors.append(distance)
+    # vignere_examination_crack(distance, start_pos, message)
+    # for i in range(0, len(groups)):
+    #     groups = [x for x in groups if x != key and key > 1]
+    #     distance, start_pos = vignere_examination_distance(groups)
+    #     vignere_examination_crack(distance, start_pos, message)
+    # # for i in range(0, key):
 
 
 def main():
@@ -540,6 +551,10 @@ def main():
                 print("invalid input")
         elif begin == 'x':
             exit(0)
+        elif begin == 't':
+            print("Opening test area...")
+            message = str(input("Input message"))
+            vignere_examination_main(message)
         else:
             print("invalid input")
 
