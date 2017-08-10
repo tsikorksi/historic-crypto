@@ -388,15 +388,12 @@ def vignere_brute(message):
             check = False
 
 
-def vignere_examination_distance(message):
+def vignere_examination_count(message):
     # brute force find the number of 3 letter repeated sequences //DONE
-    # then: use these to get the distance //DONE
     """
     :param message:
-    :return:
+    :return groups:
     """
-    count = 0
-    repeat = ''
     groups = []
     for i in range(0, len(message)):
         sequence = str(message[i:i + 3])
@@ -404,17 +401,37 @@ def vignere_examination_distance(message):
             continue
         else:
             groups.append(sequence)
-        for k in range(0, len(groups)):
-            if groups.count(sequence) > count:
-                count = groups.count(sequence)
-                repeat = groups[i]
+    return groups
+
+
+def vignere_examination_distance(groups):
+    # then: use these to get the distance //DONE
+    """
+    :param groups:
+    :return repeat:
+    :return first_distance:
+    """
+    count = 0
+    repeat = ''
+    # groups = []
+    for i in range(0, len(groups)):
+        if groups.count(groups[i]) > count:
+            count = groups.count(groups[i])
+            repeat = groups[i]
+    first_distance = len(groups)
+    start_pos = groups.index(repeat)
     # print(groups, '\n', message)
-    return repeat, len(groups)
+    return repeat, first_distance, start_pos
+
+
+def vignere_examination_crack(distance, start_pos):
+    return distance, start_pos
 
 
 def vignere_examination_main(message):
-    vignere_examination_distance(message)
-    return message
+    key, distance, start_pos = vignere_examination_distance(message)
+    vignere_examination_crack(distance, start_pos)
+    # for i in range(0, key):
 
 
 def main():
