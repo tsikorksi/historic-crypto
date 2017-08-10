@@ -1,6 +1,5 @@
 from nltk.corpus import words
 import time
-# TODO : Brute force solutions for vignere: kasisky examination
 # TODO : add comments, make prints more descriptive
 # DONE : dictionary
 
@@ -390,23 +389,27 @@ def vignere_brute(message):
 
 
 def vignere_examination_distance(message):
-    # TODO : implement kasiski
-    # brute force find the number of 3 letter repeated sequences
-    # then: use these to get the distance
-    # Crack!
+    # brute force find the number of 3 letter repeated sequences //DONE
+    # then: use these to get the distance //DONE
     """
     :param message:
     :return:
     """
+    count = 0
+    repeat = ''
     groups = []
     for i in range(0, len(message)):
-        for j in range(0, len(message), i):
-            sequence = message[i:j]
+        sequence = str(message[i:i + 3])
+        if len(sequence) < 3:
+            continue
+        else:
             groups.append(sequence)
-            groups.append(0)
-            for k in range(0, len(message)):
-                if sequence in message[i:i+len(sequence)]:
-                    groups[j+1] += 1
+        for k in range(0, len(groups)):
+            if groups.count(sequence) > count:
+                count = groups.count(sequence)
+                repeat = groups[i]
+    # print(groups, '\n', message)
+    return repeat, len(groups)
 
 
 def vignere_examination_main(message):
@@ -424,7 +427,7 @@ def main():
     """
     fun = True
     while fun:
-        begin = str(input("0 = gates 1 = polybius 2 = shift 3 = vignere"))
+        begin = str(input("0 = gates 1 = polybius 2 = shift 3 = vignere x = exit"))
         if begin == "0":
             x = str(input("0 = NOT 1 = AND 2 = OR 3 = NAND 4 = XOR 5 = NOR"))
             data = str(input("input data"))
@@ -484,11 +487,15 @@ def main():
                 vignere_decode(message, key)
             elif yuy == "2":
                 if len(message) > 8:
+                    print('Using cryptanalysis...')
                     vignere_examination_main(message)
                 else:
+                    print('Using brute-force solution...')
                     vignere_brute(message)
             else:
                 print("invalid input")
+        elif begin == 'x':
+            exit(0)
         else:
             print("invalid input")
 
