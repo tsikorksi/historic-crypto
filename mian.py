@@ -1,6 +1,7 @@
 from nltk.corpus import words
 import time
 # TODO : add comments, make prints more descriptive
+# TODO : Implement Kasiski examination
 # DONE : dictionary
 
 
@@ -431,6 +432,7 @@ def vignere_examination_crack(distance, start_pos):
 def vignere_examination_main(message):
     groups = vignere_examination_count(message)
     key, distance, start_pos = vignere_examination_distance(groups)
+    vignere_examination_crack(distance, start_pos)
     for i in range(0, len(groups)):
         groups = [x for x in groups if x != key]
         key, distance, start_pos = vignere_examination_distance(groups)
