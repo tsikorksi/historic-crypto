@@ -426,6 +426,8 @@ def vignere_examination_distance(groups):
 
 
 def factorisation(message):
+    # given array of 3 letter sequences
+    # by calculating difference between identical strings
     # TODO: get most common factor, which is len of key
     groups = vignere_examination_count(message)
     factors = []
