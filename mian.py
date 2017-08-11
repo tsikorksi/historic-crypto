@@ -405,7 +405,7 @@ def vignere_examination_count(message):
 
 
 def vignere_examination_distance(groups):
-    # use results from vignere_examination_count to get the distance between them //DONE
+    # use results from vigenere_examination_count to get the distance between them //DONE
     """
     :param groups:
     :return repeat:
@@ -422,7 +422,7 @@ def vignere_examination_distance(groups):
 
     # start_pos = groups.index(repeat)
     # print(groups, '\n', message)
-    return distance
+    return  # distance
 
 
 def factorisation(message):
