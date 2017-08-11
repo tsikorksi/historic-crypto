@@ -1,10 +1,10 @@
 from nltk.corpus import words
 import time
-# TODO : add comments, make prints more descriptive
-# DONE : dictionary
+# TODO : add comments
 
 
 def noting(data):
+    # //DONE
     """
     :param data:
     :return:
@@ -19,6 +19,7 @@ def noting(data):
 
 
 def xoring(data, key):
+    # //DONE
     """
     :param data:
     :param key:
@@ -43,6 +44,7 @@ def xoring(data, key):
 
 
 def anding(data, key):
+    # //DONE
     """
     :param data:
     :param key:
@@ -67,6 +69,7 @@ def anding(data, key):
 
 
 def oring(data, key):
+    # //DONE
     """
     :param data:
     :param key:
@@ -91,6 +94,7 @@ def oring(data, key):
 
 
 def nanding(data, key):
+    # //DONE
     """
     :param data:
     :param key:
@@ -115,6 +119,7 @@ def nanding(data, key):
 
 
 def noring(data, key):
+    # //DONE
     """
     :param data:
     :param key:
@@ -139,6 +144,7 @@ def noring(data, key):
 
 
 def polybius_decode(message):
+    # //DONE
     """
     :param message:
     :return:
@@ -167,6 +173,7 @@ def polybius_decode(message):
 
 
 def polybius_encode(message):
+    # //DONE
     """
     :param message:
     :return:
@@ -197,6 +204,7 @@ def polybius_encode(message):
 
 
 def formatting(arr):
+    # //DONE
     """
     :param arr:
     :return:
@@ -207,12 +215,14 @@ def formatting(arr):
 
 
 def alt_formatting(arr):
+    # //DONE
     for i in range(0, len(arr)):
         print(arr[i], end='')
         print("\n")
 
 
 def shift_encode(message, shift):
+    # //DONE
     """
     :param message:
     :param shift:
@@ -232,6 +242,7 @@ def shift_encode(message, shift):
 
 
 def shift_decode(message, shift):
+    # //DONE
     """
     :param message:
     :param shift:
@@ -250,6 +261,7 @@ def shift_decode(message, shift):
 
 
 def shift_brute(message):
+    # //DONE
     """
     :param message:
     :return:
@@ -268,6 +280,7 @@ def shift_brute(message):
 
 
 def vignere_encode(message, key):
+    # //DONE
     """
     :param message:
     :param key:
@@ -290,6 +303,7 @@ def vignere_encode(message, key):
 
 
 def vignere_decode(message, key):
+    # //DONE
     """
     :param message:
     :param key:
@@ -315,6 +329,7 @@ def vignere_decode(message, key):
 
 
 def search(sub_string, word_data):
+    # //DONE, feature to be added
     """
     :param word_data:
     :param sub_string:
@@ -341,6 +356,7 @@ def search(sub_string, word_data):
 
 
 def vignere_brute(message):
+    # //DONE, feature to be added
     """
     :param message:
     :return:
@@ -405,23 +421,39 @@ def vignere_examination_count(message):
 
 
 def vignere_examination_distance(groups):
-    # use results from vignere_examination_count to get the distance between them //DONE
+    # TODO: use results from vignere_examination_count to get the distance between them
+    # TODO create better system for eliminating checked sequences
     """
     :param groups:
     :return repeat:
     :return first_distance:
     """
+    print(groups)
+    first_pos = 0
+    distance = 0
+    second_pos = 0
     count = 0
-    repeated = ''
     for i in range(0, len(groups)):
         if groups[count] == 'xxx':
             count += 1
         else:
             break
-    repeat = groups[count]
-
+    if count > len(groups) - 1:
+        pass
+    else:
+        repeat = groups[count]
+        first_pos = groups.index(repeat)
+        for i in range(0, len(groups)):
+            if groups[i] == repeat:
+                second_pos = i
+        distance = second_pos - first_pos
+        if second_pos == 0:
+            distance = 0
+    groups[first_pos] = 'xxx'
+    groups[second_pos] = 'xxx'
     # start_pos = groups.index(repeat)
     # print(groups, '\n', message)
+    # print(groups)
     return distance
 
 
@@ -434,9 +466,9 @@ def factorisation(message):
     for i in range(0, len(groups)):
         distance = vignere_examination_distance(groups)
         factors.append(distance)
-        for k in range(len(groups)):
-            groups = ['xxx' if x == groups[k] else x for x in groups]
-    print(factors)
+        # for k in range(len(groups)):
+        # groups = ['xxx' if x == groups[k] else x for x in groups]
+    print(factors, groups)
 
 # def vignere_examination_crack(distance, start_pos, message):
 #     # To be rewritten
@@ -545,8 +577,10 @@ def main():
             elif yuy == "2":
                 if len(message) > 8:
                     print('Using cryptanalysis...')
+                    time.sleep(0.5)
                     vignere_examination_main(message)
                 else:
+                    time.sleep(0.5)
                     print('Using brute-force solution...')
                     vignere_brute(message)
             else:
