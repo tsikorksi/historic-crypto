@@ -185,7 +185,7 @@ def polybius_encode(message):
             [(index, row.index(message[i].upper())) for index, row in enumerate(v) if message[i].upper() in row])
         out += str(code[i])
         # out.append(code[i][i+1])
-    # formating(out)
+    # formatting(out)
     out = out.replace("[(", "")
     out = out.replace(")]", "")
     out = out.replace(", ", "")
@@ -404,25 +404,30 @@ def vignere_examination_count(message):
     return groups
 
 
-def vignere_examination_distance(groups):
+def vignere_examination_distance(groups, repeater):
     # use results from vigenere_examination_count to get the distance between them //DONE
     """
     :param groups:
+    :param repeater:
     :return repeat:
-    :return first_distance:
+    :return distance:
     """
-    count = 0
-    repeated = ''
-    for i in range(0, len(groups)):
-        if groups[count] == 'xxx':
-            count += 1
+    repeated = 0
+    repeat = groups[0]
+    for i in range(0, len(groups) - 1):
+        if groups[i] == repeater:
+            repeat = groups[i+1]
         else:
             break
-    repeat = groups[count]
+    num_check = groups.index(repeat)
+    for i in range(groups.index(repeat), len(groups)):
+        if groups[i] == repeat:
+            repeated = i
+    distance = repeated - num_check
 
     # start_pos = groups.index(repeat)
-    # print(groups, '\n', message)
-    return  # distance
+    # print(groups)
+    return distance, repeat
 
 
 def factorisation(message):
@@ -430,12 +435,18 @@ def factorisation(message):
     # by calculating difference between identical strings
     # TODO: get most common factor, which is len of key
     groups = vignere_examination_count(message)
+    repeater = ''
     factors = []
     for i in range(0, len(groups)):
-        distance = vignere_examination_distance(groups)
+        distance, repeat = vignere_examination_distance(groups, repeater)
+        repeater = repeat
+        # for j in range(0, len(groups)):
+        #     if groups[j] == repeat:
+        #         groups[j] = 'xxx'
+        #         count += 1
+        #     if count == len(groups):
+        #         break
         factors.append(distance)
-        for k in range(len(groups)):
-            groups = ['xxx' if x == groups[k] else x for x in groups]
     print(factors)
 
 # def vignere_examination_crack(distance, start_pos, message):
