@@ -1,5 +1,5 @@
 # historic-crypto
-Some python implementations of simple and historic cryptography
+Some python implementations of simple and historic cryptography - as completed as its going to get
 
 Includes :
 - Logic gates
